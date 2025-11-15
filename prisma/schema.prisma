@@ -13,3 +13,34 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User{
+  id Int @id @default(autoincrement())
+  email String @unique
+  panier Panier?
+}
+
+model Panier {
+  id Int @id @default(autoincrement())
+  userId Int? @unique
+  user User? @relation(fields: [userId], references: [id])
+  items PanierItems[]
+}
+
+model PanierItems{
+  @@id([panierId, productId])
+  panierId Int 
+  panier Panier @relation(fields :[panierId], references : [id])
+  productId Int
+  product Product @relation(fields : [productId], references : [id])
+  size String
+  quantity Int
+}
+
+model Product{
+  id Int @id 
+  name String @unique
+  image String
+  price Float
+  items PanierItems[]
+}
