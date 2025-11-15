@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap : 15px;
+  position: fixed;
+  padding-left: 16px;
+  padding-right: 16px;
+  justify-content: space-between;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 61px;
+  border-bottom: 1px solid black;
+}
+.left-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.middle-section{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.middle-section span{
+  line-height: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: Inter;
+  cursor: pointer;
+}
+
+.middle-section span:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.right-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-section svg{
+  stroke: black;
+  fill: none;
+}
