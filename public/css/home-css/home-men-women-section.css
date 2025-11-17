@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing : border-box;
+}
+
+.both-section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+/*To add the border that separates the 2 sections*/
+.men-section{
+  border-right: 1px solid black;
+}
+
+.men-section, .women-section{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.men-image, .women-image{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.men-section-teasing, .women-section-teasing{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px 16px 32px 16px;
+  height: auto;
+  align-items: flex-start;
+  gap : 12px
+}
+
+.infocus-text{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.infocus-text::before{
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: black;
+}
+
+.teasing-text{
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 800;
+}
+

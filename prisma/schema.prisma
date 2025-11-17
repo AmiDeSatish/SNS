@@ -5,8 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -14,9 +13,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Sexe{
+  male
+  female
+  unisex
+}
+
 model User{
   id Int @id @default(autoincrement())
   email String @unique
+  name String
+  lastName String
+  password String
   panier Panier?
 }
 
@@ -38,9 +46,15 @@ model PanierItems{
 }
 
 model Product{
-  id Int @id 
+  id Int @id @default(autoincrement())
+  type String
+  date DateTime @default(now())
+  brand String
   name String @unique
   image String
   price Float
+  sexe Sexe @default(unisex)
   items PanierItems[]
 }
+
+

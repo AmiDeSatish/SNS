@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  box-sizing : border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 36px 0;
+}
+
+.login-container, .recover-container{
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: auto;
+}
+
+.login-container{
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.login-title{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.login-title::before{
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: black;
+}
+
+.email-title,.password-title{
+  font-size: 14px;
+}
+
+.input-password, .input-email{
+  box-sizing: content-box;
+  height: 20px;
+  padding: 14px 16px;
+}
+
+.btn-login{
+  margin-top: 20px;
+  font-size: 16px;
+  box-sizing : content-box;
+  padding: 12px 16px;
+  background-color: #60FF7A;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.create-account-text{
+  font-size: 12px;
+  line-height: 1;
+  width: auto;
+  align-self: center;
+  text-align: center;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.recover-container{
+  gap: 15px;
+}
+
+.recover-container p{
+  font-size: 14px;
+}
+
+.recover-title{
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.recover-note{
+  font-size: 16px;
+  font-weight: 800;
+}

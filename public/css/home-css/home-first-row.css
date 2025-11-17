@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.first-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.banner-1{
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.8 / 1;
+  height: auto;
+  background-image: url("../../assets/home/home-first-row/AJ1-Low-Chicago-Sneakersnstuff.webp");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.banner-text{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 32px 16px;
+  height: 50%;
+  width: 100%;
+}
+
+.banner-text-title{
+  display: flex;
+  align-items: center;
+  padding: 2px 8px;
+  gap: 5px;
+  background-color: white;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.banner-text-title::before{
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: black;
+}
+
+.banner-text-brand{
+  display: flex;
+  padding: 2px 8px;
+  background-color: white;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.banner-text-model{
+  display: flex;
+  padding: 2px 8px;
+  background-color: white;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.banner-2{
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.8/1;
+  height: auto;
+  background-image: url("../../assets/home/home-first-row/SNS-GT-II-x-Viagra-Boys-Coming-Soon.webp");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.banner-3{
+  display: flex;
+  align-items: flex-end;
+  position : relative;
+  width: 100%;
+  aspect-ratio: 0.8 / 1;
+  height: auto;
+  background-image: url("../../assets/home/home-first-row/Salomon-XT-6-GORE-TEX-Sneakersnstuff-1.webp");
+  background-size: cover;
+  cursor: pointer;
+}
