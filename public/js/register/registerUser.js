@@ -27,7 +27,7 @@ btnRegister.addEventListener("click", async() => {
 
       const data = await response.json()
       if(data.success){
-        window.location.href = "/html/userSpace.html"
+        window.location.href = "/html/login.html"
       }
       else(console.log("Success is not ok."))
     }
