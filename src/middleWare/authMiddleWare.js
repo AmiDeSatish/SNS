@@ -12,7 +12,7 @@ async function authMiddleWare(req,res,next){
     
     // Add id in the request
     req.id = decoded.id
-    res.status(200).send("Valid token")
+    res.status(200).send({message : "Valid token"})
     next()
   })
 }

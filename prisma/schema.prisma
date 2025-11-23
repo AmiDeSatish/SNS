@@ -13,12 +13,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Sexe{
-  male
-  female
-  unisex
-}
-
 model User{
   id Int @id @default(autoincrement())
   email String @unique
@@ -26,35 +20,70 @@ model User{
   lastName String
   password String
   panier Panier?
+  order Order[]
+}
+
+model Order{
+  id Int @id @default(autoincrement())
+  userId Int
+  user User @relation(fields : [userId], references : [id])
+  orderItems OrderItem[]
+  date DateTime @default(now())
+}
+
+model OrderItem{
+  @@id([orderId,productVariantId])
+
+  order Order @relation(fields : [orderId], references : [id])
+  orderId Int
+  productVariant Catalogue @relation(fields : [productVariantId], references: [id])
+  productVariantId Int
+  quantity Int
 }
 
 model Panier {
   id Int @id @default(autoincrement())
   userId Int? @unique
   user User? @relation(fields: [userId], references: [id])
-  items PanierItems[]
+  panierItems PanierItem[]
 }
 
-model PanierItems{
-  @@id([panierId, productId])
+model PanierItem{
+  @@id([panierId, productVariantId])
+
   panierId Int 
   panier Panier @relation(fields :[panierId], references : [id])
-  productId Int
-  product Product @relation(fields : [productId], references : [id])
-  size String
+  productVariantId Int
+  productVariant Catalogue @relation(fields : [productVariantId], references : [id])
   quantity Int
 }
 
 model Product{
   id Int @id @default(autoincrement())
+
   type String
   date DateTime @default(now())
   brand String
+  sexe String @default("unisex")
   name String @unique
-  image String
-  price Float
-  sexe Sexe @default(unisex)
-  items PanierItems[]
+
+  catalogue Catalogue[]
 }
 
+model Catalogue{
+  id Int @id @default(autoincrement())
+  productId Int
+  product Product @relation(fields : [productId], references : [id])
+
+  image String
+  color String
+  size String
+  stock Int  @default(30)
+  price Float
+
+  panierItem PanierItem[]
+  orderItem OrderItem[]
+
+  @@unique([productId,color,size])
+}
 
