@@ -7,7 +7,7 @@ async function generateProductCard(){
   let products
   try{
     // Ask for products data to the server
-    const response = await fetch("/api/products/infos")
+    const response = await fetch("/api/products/info-products-home")
 
     if(!response.ok){throw new Error("Response not ok in generate home page")}
     
@@ -17,11 +17,11 @@ async function generateProductCard(){
     products.forEach(product => {
       ShopSectionHTML += `
       <div class="card">
-        <img class="product-image" src="..${product.image}">
+        <img class="product-image" src="..${product.catalogue[0].image}">
         <div class="product-infos">
           <p class="product-brand">${product.brand.toUpperCase()}</p>
           <p class="product-name">${product.name}</p>
-          <p class="product-price">$${product.price}</p>
+          <p class="product-price">$${product.catalogue[0].price}</p>
         </div>
       </div>
       `

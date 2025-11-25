@@ -1,4 +1,4 @@
-import { products } from "./collection1/products.js";
+import { products } from "./collection2/products.js";
 import { capitalizeFirstLetter,normalizeString } from "../../src/utils/string.js"
 import { findImageExtension } from "../../src/utils/image.js";
 import "@prisma/client"

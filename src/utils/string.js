@@ -49,4 +49,13 @@ export function SeparateColorFromName(text){
   return text.substring(startColor + 1,endColor)
 }
 
+export function normalizeDataProducts(products){
+  products.forEach(product => {
+    const productName = normalizeString(product.name)
+    for(const [color,colordata] of Object.entries(product.colorsAvailable)){
+      console.log(productName + "@" + normalizeString(color))
+    }
+  })
+}
+
 //console.log(normalizeString("Cloudflow 5 AD@Obsidian"))

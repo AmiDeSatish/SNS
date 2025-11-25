@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { products } from "./data/collection1/products.js";
+import { products } from "./data/collection2/products.js";
 import { VarianteGeneration } from "./data/varianteGeneration.js"; 
 
 const prisma = new PrismaClient()
